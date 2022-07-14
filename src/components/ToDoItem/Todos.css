@@ -1,0 +1,8 @@
+.Todos {
+    padding: 1rem;
+    background-color: rgb(177, 168, 168);
+    margin: 2rem auto;
+    width: 50rem;
+    max-width: 95%;
+    border-radius: 8px;
+  }

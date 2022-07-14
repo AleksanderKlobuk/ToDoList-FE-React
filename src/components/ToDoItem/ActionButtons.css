@@ -1,0 +1,30 @@
+.todo_buttons {
+    display: flex;
+    flex-direction: column;
+    width: 5.0rem;
+    height: 5.0rem;
+    border: 1px solid #ececec;
+    background-color: #5b0b7e;
+    color: white;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .CompletedBtn {
+    font-size: 0.5rem;
+    margin: 2px;
+    
+    
+  }
+  
+  .EditBtn {
+    font-size: 0.5rem;
+    margin: 2px;
+  }
+  
+  .RemoveBtn {
+    font-size: 0.5rem;
+    margin: 2px;
+    
+  }
