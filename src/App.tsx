@@ -1,3 +1,4 @@
+import NewTask from "./components/Form/NewTask";
 import Todos from "./components/ToDoItem/Todos";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
   return (
     
     <div className="App">
-      <h1>ToDo App</h1>
+      <NewTask/>
       <Todos text={TodoText} />
       </div>
   );
