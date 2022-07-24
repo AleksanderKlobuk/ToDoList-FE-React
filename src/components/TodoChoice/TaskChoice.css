@@ -1,0 +1,23 @@
+.choice-items {
+  display: flex;
+  height: 2rem;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-item {
+  font-size: 1.3rem;
+  width: 200px;
+  margin: 2px;
+  background-color: rgb(28, 196, 31);
+  border: 3px solid #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+}
+
+.choice-item:hover {
+  background-color: rgb(84, 92, 255);
+}
