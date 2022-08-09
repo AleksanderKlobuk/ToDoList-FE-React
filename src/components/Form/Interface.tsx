@@ -1,8 +1,7 @@
 export interface NewTask {
-  props?: string;
-  onAddTodo: (todos: { id: string }) => void;
+  onAddTodo: (todoData: { id: string; todoName: string }) => void; 
 }
 
 export interface TaskFrom {
-  onSaveTodoData: (todoData: { todoName: string }) => void; //What type shoild be ised here??????????
+  onSaveTodoData: (todoData: { todoName: string }) => void; 
 }

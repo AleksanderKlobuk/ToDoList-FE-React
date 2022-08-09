@@ -1,23 +1,19 @@
 import ToDoItem from "./ToDoItem";
-import "./Todos.css";
+import styles from "./Todos.module.css";
 import { Todo as Props } from "./Interface";
 
 const Todos: React.FC<Props> = (props) => {
   return (
-    <div className="Todos">
+    
+    <div className={styles.Todos}>
       {props.todoObject.map((todos) => (
-        <ToDoItem itemtext={todos.todoName} />
+        <ToDoItem itemtext={todos.todoName} key={todos.id}/>
       ))}
     </div>
   );
 };
 
 export default Todos;
-
-
-
-
-
 
 /*Hard coded TodoItem (with no .map())
 <ToDoItem itemtext={props.todoObject[0].todoName}/>

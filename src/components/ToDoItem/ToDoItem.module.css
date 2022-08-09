@@ -1,4 +1,4 @@
-.todo-item {
+.todo_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,7 +7,7 @@
   background-color: #29282856;
 }
 
-.todo-item__description {
+.todo_item__description {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -17,16 +17,16 @@
   flex: 1;
 }
 
-.todo-item h2 {
+.todo_item h2 {
   font-size: 2.1rem;
   margin: 0 1rem;
   color: white;
 }
 
-.todo-checkbox ::before {
+.todo_checkbox ::before {
   font-size: 0.1rem;
 }
 
-.todo-checkbox ::after {
+.todo_checkbox ::after {
   font-size: 0.5rem;
 }

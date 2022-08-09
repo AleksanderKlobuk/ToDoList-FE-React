@@ -1,8 +1,8 @@
-import "./Card.css";
+import styles from "./Card.module.css"; //czy moge zostawic jako nie module????
 import {Card as Props} from './Interface'
 
 const Card: React.FC<Props> = (props): JSX.Element => {
-  const classes = "card " + props.className;
+  const classes = `${styles.card} ${props.className}`;
   return <div className={classes}>{props.children}</div>;
 };
 

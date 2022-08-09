@@ -1,4 +1,4 @@
-.choice-items {
+.choice_items {
   display: flex;
   height: 2rem;
   color: white;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.choice-item {
+.choice_item {
   font-size: 1.3rem;
   width: 200px;
   margin: 2px;
@@ -18,6 +18,6 @@
   text-align: center;
 }
 
-.choice-item:hover {
+.choice_item:hover {
   background-color: rgb(84, 92, 255);
 }

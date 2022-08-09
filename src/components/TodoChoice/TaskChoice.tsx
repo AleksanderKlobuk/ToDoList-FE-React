@@ -1,12 +1,12 @@
-import "./TaskChoice.css";
+import styles from "./TaskChoice.module.css";
 
 const TaskChoice: React.FC = () => {
   return (
     <div >
-      <div className="choice-items">
-        <div className="choice-item">Completed Tasks</div>
-        <div className="choice-item">Actioned Tasks</div>
-        <div className="choice-item">All Tasks</div>
+      <div className={styles.choice_items}>
+        <div className={styles.choice_item}>Completed Tasks</div>
+        <div className={styles.choice_item}>Actioned Tasks</div>
+        <div className={styles.choice_item}>All Tasks</div>
       </div>
     </div>
   );

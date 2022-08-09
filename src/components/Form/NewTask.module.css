@@ -1,4 +1,4 @@
-.new-task {
+.new_task {
   background: #2a88ad;
   padding: 1rem;
   margin: 2rem auto;
@@ -9,7 +9,7 @@
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
-.new-task button {
+.new_task button {
   font: inherit;
   cursor: pointer;
   padding: 1rem 2rem;
@@ -20,8 +20,8 @@
   margin-right: 1rem;
 }
 
-.new-task button:hover,
-.new-task button:active {
+.new_task button:hover,
+.new_task button:active {
   background-color: #11c020;
   border-color: #510674;
 }
