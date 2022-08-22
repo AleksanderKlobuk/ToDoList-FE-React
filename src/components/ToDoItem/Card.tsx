@@ -3,7 +3,9 @@ import {Card as Props} from './Interface'
 
 const Card: React.FC<Props> = (props): JSX.Element => {
   const classes = `${styles.card} ${props.className}`;
+  console.log(props.children)
   return <div className={classes}>{props.children}</div>;
+  
 };
 
 export default Card;

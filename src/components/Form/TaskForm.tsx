@@ -47,8 +47,8 @@ export default TaskForm;
 
 
 
-//3rd ere whem we call our function and we provifr todoData as a parameter which will receive as a parameter in NewTask
+//3rd here whem we call our function and we provide todoData as a parameter which will receive as a parameter in NewTask
 //TF1 enteredTodo to empty string. Clears form as we use enteredTodo as value for imput
-//TF 3If input value is greater thatn 0 we set isValid to true and our styling changes accordingly to what we have assigned to invalid class in css
+//TF3 If input value is greater thatn 0 we set isValid to true and our styling changes accordingly to what we have assigned to invalid class in css
 //TF4 Check if we trimed entered value lenght is 0. If 0 we do not submit enteredTodo (blank todo)
 //TF5  Other below lines of codes stop if input 0 since we use return here

@@ -1,19 +1,27 @@
 import ToDoItem from "./ToDoItem";
 import styles from "./Todos.module.css";
-import { Todo as Props } from "./Interface";
+import { useContext } from "react";
+import DataContext from "../store/DataContext";
 
-const Todos: React.FC<Props> = (props) => {
+const Todos: React.FC = () => {
+  const ctx = useContext(DataContext)
+
   return (
-    
     <div className={styles.Todos}>
-      {props.todoObject.map((todos) => (
-        <ToDoItem itemtext={todos.todoName} key={todos.id}/>
+      {ctx.todotext.map((todos) => (
+        <ToDoItem itemtext={todos.todoName} key={todos.id} id={todos.id} status={todos.status}/>
       ))}
     </div>
   );
 };
 
 export default Todos;
+
+
+
+
+
+
 
 /*Hard coded TodoItem (with no .map())
 <ToDoItem itemtext={props.todoObject[0].todoName}/>

@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TaskModule from './NewTask.module.css';
 import TaskForm from './TaskForm';
-import { NewTask as Props } from './Interface';
+import AuthContext from '../store/DataContext';
 
-const NewTask: React.FC<Props> = (props) => {//2nd
+const NewTask: React.FC = (props) => {//2nd
+  const ctx = useContext(AuthContext)
+
   const saveTodoDataHandler = (enteredTodoData: {todoName: string}) => {
     const todoData = {//NT1
       id: Math.random().toString(),
+      status:'entered',
       ...enteredTodoData, //NT2
     };
-    props.onAddTodo(todoData); //5th
+    ctx.onAddTodo(todoData); //5th
   };
   return (
     <div className={TaskModule.new_task}>
