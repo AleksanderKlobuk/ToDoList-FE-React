@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import { SingleTodo } from "../ToDoItem/Interface";
 
 const DataContext = React.createContext({
-  todotext: [{id: "1", todoName: "I am your first task. Remove me",status:'entered'  }],
+  todotext: [{id: "1", todoName: "I am your first task. Remove me",status:'entered'}],
   onAddTodo: (todos: SingleTodo) => {},
   onDelete: (taskID: string) => {},
+  onStatusChange:(status:string)=>{},
+  onViewChange:(name:string)=>{},
+  taskstatus:{},
+  taskview:{}
+  
 });
 
 export const DataProvider = (props: any) => {  //What to use HERE?????
+  const [taskview, setTaskView] = useState('all')
+  const [taskstatus, setTaskStatus] = useState('entered')
   const [todotext, setTodotext] = useState([
-    { id: "0.88219328a043564",status:'entered', todoName: "I am your first task. Remove me" },
+    { id: "0.88219328a043564",status:'entered', todoName: "Remove Me" },
   ]);
 
   const addTodoHandler = (todos: SingleTodo) => {
@@ -17,6 +24,13 @@ export const DataProvider = (props: any) => {  //What to use HERE?????
       return [...prevTodos, todos];
     });
   };
+  const setViewToCompleted = (name:string) => {
+    setTaskView(name)
+  }
+
+  const statusHandler = (status:string) =>{
+    setTaskStatus(status)
+  }
 
   const deleteHandler = (taskID: string) => {//we submit task name
     setTodotext((prevTodos) => {
@@ -30,6 +44,10 @@ export const DataProvider = (props: any) => {  //What to use HERE?????
         todotext: todotext,
         onAddTodo: addTodoHandler,
         onDelete: deleteHandler,
+        onStatusChange:statusHandler,
+        onViewChange:setViewToCompleted,
+        taskstatus:taskstatus,
+        taskview:taskview,
       }}
     >
       {props.children}

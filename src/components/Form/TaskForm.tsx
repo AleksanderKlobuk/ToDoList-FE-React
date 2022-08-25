@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from "react";
 import styles from "./TaskForm.module.css";
 import { TaskFrom as Props } from "./Interface";
 
-const TaskForm: React.FC <Props> = (props) => {//To provide correct type
+const TaskForm: React.FC <Props> = (props) => {
   const [enteredTodo, setEnteredTodo] = useState('')
   const [isValid, setIsValid] = useState(true)
 

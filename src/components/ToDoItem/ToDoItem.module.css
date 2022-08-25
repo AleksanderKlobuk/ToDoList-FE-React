@@ -6,6 +6,10 @@
   margin: 1rem 0;
   background-color: #29282856;
 }
+.todo_item.completed_task {
+
+  background-color: #036e03b2;
+}
 
 .todo_item__description {
   display: flex;

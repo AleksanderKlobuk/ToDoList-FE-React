@@ -1,19 +1,32 @@
-import React, { MouseEventHandler, useContext, useEffect, useReducer, useState } from "react";
+import React, { ChangeEvent, useContext, useEffect, useReducer, useState } from "react";
 import AuthContext from "../store/AuthContext";
 import styles from "./Login.module.css";
 
-const emailReducer = (state:any, action:any)=> {
+type State = {
+  value:string
+}
+type ActionEmail =
+  | { type: 'EMAIL_INPUT'; val: string; }
+  | { type: 'CHECK_EMAIL_INPUT_WHEN_BLUR'; val: string }
+  | { type: 'CHECK_EMAIL_INPUT_WHEN_BLUR'}
+  type ActionPassword =
+  | { type: 'PASSWORD_INPUT'; val: string; }
+  | { type: 'CHECK_PASSWORD_INPUT_WHEN_BLUR'; val: string }
+  | { type: 'CHECK_PASSWORD_INPUT_WHEN_BLUR'}
+
+
+const emailReducer = (state:State, action:ActionEmail)=> {
   if(action.type === 'EMAIL_INPUT'){
     return {value:action.val , isValid: action.val.includes('@')}
   }
-  if(action.type === 'CHECK_EMAIL_INPUT_WHEN_BLUR'){
+  if(action.type === 'CHECK_EMAIL_INPUT_WHEN_BLUR'){console.log(state.value + 'THIS IS STATE')
     return {value:state.value , isValid: state.value.includes('@')}
   } 
   // else   Try if else works
   return {value:'', isValid:false}
 }
 
-const passwordReducer = (state:any,action:any) => {
+const passwordReducer = (state:State,action:ActionPassword) => {
   if(action.type === 'PASSWORD_INPUT'){
     return{value:action.val, isValid:action.val.trim().length > 6}
   }
@@ -22,7 +35,6 @@ const passwordReducer = (state:any,action:any) => {
   }
   return {value:'', isValid:false}
 }
-
 
 const Login = () => {
   const AuthCtx = useContext(AuthContext)
@@ -49,7 +61,7 @@ const Login = () => {
   }, [emailIsValid, passwordIsValid]);
 
 
-  const emailChangeHandler = (event:any) => {
+  const emailChangeHandler = (event:ChangeEvent<HTMLInputElement>) => {
     dispatchEmail({type:'EMAIL_INPUT',val:event.target.value})
   };
 
@@ -57,7 +69,7 @@ const Login = () => {
     dispatchEmail({type:'CHECK_EMAIL_INPUT_WHEN_BLUR'})
   };
 
-  const passwordChangeHandler = (event:any) => {
+  const passwordChangeHandler = (event:ChangeEvent<HTMLInputElement>) => {
     dispatchPassword({type:'PASSWORD_INPUT', val:event.target.value})
   };  
   const passwordValidatorHandler = () => {

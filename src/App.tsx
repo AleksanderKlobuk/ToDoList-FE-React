@@ -4,20 +4,20 @@ import Login from "./components/Login/Login";
 import NavBar from "./components/NavBar/NavBar";
 import TaskChoice from "./components/TodoChoice/TaskChoice";
 import Todos from "./components/ToDoItem/Todos";
-
 import AuthContext from "./components/store/AuthContext";
 import { DataProvider } from "./components/store/DataContext";
 
 function App() {
-  const ctx = useContext(AuthContext)
+  const ctxAuth = useContext(AuthContext)
+
   return (
     <div className="App">
       <DataProvider>
-        {!ctx.isLoggedIn && < Login />}
-        {ctx.isLoggedIn && < NavBar />}
-        {ctx.isLoggedIn && <NewTask />}
-        {ctx.isLoggedIn && <TaskChoice />}
-        {ctx.isLoggedIn && <Todos />}
+        {!ctxAuth.isLoggedIn && < Login />}
+        {ctxAuth.isLoggedIn && < NavBar />}
+        {ctxAuth.isLoggedIn && <NewTask />}
+        {ctxAuth.isLoggedIn && <TaskChoice />}
+        {ctxAuth.isLoggedIn && <Todos />}
       </DataProvider>
     </div>
   );

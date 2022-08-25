@@ -17,10 +17,8 @@ export const AuthProvider = (props:any) => {
   },[])
 
   const loginHandler = (email: string, password: string) => {
-    console.log('TO,......' + isLoggedIn)
     localStorage.setItem('isLoggedIn', "1");
     setIsLoggedIn(true);
-    
   };
 
   const logoutHandler = () => {
